@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:street_bite_app/core/config/app_theme.dart';
-import 'package:street_bite_app/features/splash/presentation/screens/splash_screen.dart';
+import 'package:street_bite_app/features/main_navigation/presentation/screens/main_navigation_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      home: SplashScreen(),
+      home: const MainNavigationScreen(),
     );
   }
 }
