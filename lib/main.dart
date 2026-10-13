@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:street_bite_app/core/config/app_theme.dart';
 import 'package:street_bite_app/features/splash/presentation/screens/splash_screen.dart';
 
 void main() {
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
       home: SplashScreen(),
     );
   }
