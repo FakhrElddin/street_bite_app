@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:street_bite_app/core/utils/app_colors.dart';
 import 'package:street_bite_app/core/widgets/custom_button.dart';
 import 'package:street_bite_app/core/widgets/custom_text_form_field.dart';
+import 'package:street_bite_app/features/auth/presentation/screens/register_screen.dart';
 import 'package:street_bite_app/features/auth/presentation/widgets/auth_footer_section.dart';
 import 'package:street_bite_app/features/auth/presentation/widgets/auth_header.dart';
 
@@ -61,7 +62,14 @@ class LoginScreen extends StatelessWidget {
                   AuthFooterSection(
                     questionText: "Don't have account? ",
                     actionText: 'SIGN UP',
-                    onActionTap: () {},
+                    onActionTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterScreen(),
+                        ),
+                      );
+                    },
                   ),
                   SafeArea(bottom: true, child: SizedBox.shrink()),
                 ],

@@ -16,7 +16,12 @@ class AuthHeader extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        Image.asset(AppAssets.splashImage, height: backgroundImageHeight),
+        Image.asset(
+          AppAssets.splashImage,
+          height: backgroundImageHeight,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
         Image.asset(AppAssets.splashLogo, height: logoHeight),
       ],
     );
