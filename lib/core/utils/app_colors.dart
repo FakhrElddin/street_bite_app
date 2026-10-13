@@ -10,4 +10,5 @@ abstract final class AppColors {
   static const Color redColor = Colors.red;
   static const Color greyColor = Colors.grey;
   static const Color blackColor = Colors.black;
+  static const Color yellowColor = Color(0XFFFFA800);
 }
