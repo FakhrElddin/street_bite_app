@@ -59,4 +59,26 @@ class AppTheme {
       elevation: 8,
     ),
   );
+
+  static ThemeData authTheme = ThemeData(
+    useMaterial3: true,
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: AppColors.primaryColor,
+    primaryColor: AppColors.primaryColor,
+    fontFamily: AppConstants.fontFamily,
+    colorScheme: const ColorScheme.light(
+      primary: AppColors.primaryColor,
+      surface: AppColors.primaryColor,
+    ),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.primaryColor,
+      foregroundColor: AppColors.whiteColor,
+      elevation: 0,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: AppColors.transparentColor,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+      ),
+    ),
+  );
 }

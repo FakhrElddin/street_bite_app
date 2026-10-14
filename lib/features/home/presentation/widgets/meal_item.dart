@@ -3,11 +3,10 @@ import 'package:street_bite_app/core/utils/app_assets.dart';
 import 'package:street_bite_app/core/utils/app_colors.dart';
 
 class MealItem extends StatelessWidget {
-  const new({super.key});
+  const MealItem({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.sizeOf(context).height;
     final screenWidth = MediaQuery.sizeOf(context).width;
     return Stack(
       alignment: AlignmentDirectional.topEnd,
@@ -16,20 +15,18 @@ class MealItem extends StatelessWidget {
           width: screenWidth * 0.608,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
                 child: Image.asset(
                   AppAssets.firstBannerImage,
-                  height: screenHeight * 0.192,
+                  height: 95,
                   width: screenWidth * 0.608,
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 6),
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 12),
                 child: Text(
