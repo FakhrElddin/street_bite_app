@@ -41,4 +41,30 @@ class FirestoreService {
       );
     }
   }
+
+  Future<Either<Failures, UserModel?>> getUserData({
+    required String uid,
+  }) async {
+    try {
+      final docRef = db
+          .collection('users')
+          .withConverter<UserModel>(
+            fromFirestore: (snapshot, options) =>
+                UserModel.fromJson(snapshot.data()!),
+            toFirestore: (userModel, options) => userModel.toJson(),
+          )
+          .doc(uid);
+      final snapshot = await docRef.get();
+      return Right(snapshot.data());
+    } on FirebaseException catch (e) {
+      return Left(FirestoreFailure.fromFirebaseException(e));
+    } catch (e) {
+      return Left(
+        UnexpectedFailure(
+          errorMessage:
+              'An unexpected database error occurred, Please try again later.',
+        ),
+      );
+    }
+  }
 }
