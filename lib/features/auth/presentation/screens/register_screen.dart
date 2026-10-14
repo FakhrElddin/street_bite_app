@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:street_bite_app/core/config/app_theme.dart';
 import 'package:street_bite_app/core/utils/app_colors.dart';
 import 'package:street_bite_app/core/widgets/custom_button.dart';
 import 'package:street_bite_app/core/widgets/custom_text_form_field.dart';
@@ -11,9 +12,11 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.sizeOf(context).height;
-    return Scaffold(
-      backgroundColor: AppColors.primaryColor,
-      body: SingleChildScrollView(
+    return Theme(
+      data: AppTheme.authTheme,
+      child: Scaffold(
+        backgroundColor: AppColors.primaryColor,
+        body: SingleChildScrollView(
         child: Column(
           children: [
             AuthHeader(
@@ -91,6 +94,7 @@ class RegisterScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
       ),
     );
   }

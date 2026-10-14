@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "260365251074",
+    "project_id": "street-bite-app",
+    "storage_bucket": "street-bite-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260365251074:android:866f01b8b278d408a4ad1b",
+        "android_client_info": {
+          "package_name": "com.example.street_bite_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZhN1qldvBQlqxgpR4TqJnwD1tzC88LDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
