@@ -1,0 +1,79 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:street_bite_app/core/errors/failures.dart';
+
+class AuthFailure extends Failures {
+  AuthFailure({required super.errorMessage});
+
+  factory AuthFailure.fromFirebaseAuthException(
+    FirebaseAuthException authException,
+  ) {
+    switch (authException.code) {
+      case 'weak-password':
+        return AuthFailure(errorMessage: 'The password provided is too weak.');
+      case 'email-already-in-use':
+        return AuthFailure(
+          errorMessage: 'An account already exists for that email.',
+        );
+      case 'invalid-email':
+        return AuthFailure(errorMessage: 'The email address is not valid.');
+      case 'user-not-found':
+        return AuthFailure(
+          errorMessage: 'No user found for that email address.',
+        );
+      case 'wrong-password':
+        return AuthFailure(
+          errorMessage: 'Wrong password provided for that user.',
+        );
+      case 'user-disabled':
+        return AuthFailure(
+          errorMessage: 'This user account has been disabled.',
+        );
+      case 'too-many-requests':
+        return AuthFailure(
+          errorMessage: 'Too many attempts. Please try again later.',
+        );
+      case 'network-request-failed':
+        return AuthFailure(
+          errorMessage: 'Network error. Please check your internet connection.',
+        );
+      // login case
+      case 'invalid-credential':
+        return AuthFailure(
+          errorMessage:
+              'Invalid email or password. Please check your credentials.',
+        );
+      default:
+        return AuthFailure(
+          errorMessage:
+              authException.message ??
+              'An unexpected authentication error occurred.',
+        );
+    }
+  }
+}
+
+class FirestoreFailure extends Failures {
+  FirestoreFailure({required super.errorMessage});
+
+  factory FirestoreFailure.fromFirebaseException(
+    FirebaseException firebaseException,
+  ) {
+    switch (firebaseException.code) {
+      case "permission-denied":
+        return FirestoreFailure(
+          errorMessage:
+              'Permission denied. You do not have access to this data.',
+        );
+      case "unavailable":
+        return FirestoreFailure(
+          errorMessage: 'Firestore service is currently unavailable. Check your internet.',
+        );
+      default:
+        return FirestoreFailure(
+          errorMessage:
+              firebaseException.message ??
+              'A database error occurred. Please try again.',
+        );
+    }
+  }
+}
