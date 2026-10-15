@@ -1,7 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:street_bite_app/core/errors/failures.dart';
 import 'package:street_bite_app/features/auth/domain/entities/user_entity.dart';
 import 'package:street_bite_app/features/auth/domain/use_cases/register_use_case.dart';
