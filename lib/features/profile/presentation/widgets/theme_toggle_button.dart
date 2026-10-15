@@ -15,8 +15,9 @@ class ThemeToggleButton extends StatelessWidget {
         final isDark = themeCubit.isDark;
 
         return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-          margin: const EdgeInsets.symmetric(horizontal: 32),
+          height: 64,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 24),
           decoration: BoxDecoration(
             color: isDark ? const Color(0xFF1E1E1E) : Colors.grey.shade100,
             borderRadius: BorderRadius.circular(16),
@@ -52,6 +53,7 @@ class ThemeToggleButton extends StatelessWidget {
               Switch.adaptive(
                 value: isDark,
                 activeTrackColor: AppColors.primaryColor,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 onChanged: (_) {
                   themeCubit.changeTheme();
                 },
