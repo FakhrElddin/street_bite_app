@@ -12,6 +12,7 @@ import 'package:street_bite_app/features/auth/presentation/screens/register_scre
 import 'package:street_bite_app/features/auth/presentation/widgets/auth_footer_section.dart';
 import 'package:street_bite_app/features/auth/presentation/widgets/auth_header.dart';
 import 'package:street_bite_app/features/main_navigation/presentation/screens/main_navigation_screen.dart';
+import 'package:street_bite_app/generated/l10n.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -52,53 +53,54 @@ class _LoginScreenState extends State<LoginScreen> {
                     backgroundImageHeight: screenHeight * 0.4,
                     logoHeight: screenHeight * 0.15,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     child: Column(
                       children: [
                         Text(
-                          'Food and groceries delivered to you',
-                          style: TextStyle(
+                          S.of(context).loginHeadline,
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 36,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         CustomTextFormField(
                           controller: emailController,
-                          labelText: 'Email',
-                          hintText: 'Enter Your Email',
+                          labelText: S.of(context).emailLabel,
+                          hintText: S.of(context).emailHint,
                           textInputAction: TextInputAction.next,
                           keyboardType: TextInputType.emailAddress,
                           validator: AppValidators.validateEmail,
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         CustomTextFormField(
                           controller: passwordController,
-                          labelText: 'Password',
-                          hintText: 'Enter Your Password',
+                          labelText: S.of(context).passwordLabel,
+                          hintText: S.of(context).passwordHint,
                           isPassword: true,
                           textInputAction: TextInputAction.done,
                           keyboardType: TextInputType.visiblePassword,
                           validator: AppValidators.validate,
                         ),
-                        SizedBox(height: 24),
+                        const SizedBox(height: 24),
                         BlocConsumer<LoginCubit, LoginState>(
                           listener: (context, state) {
                             if (state is LoginError) {
                               CustomAppDialog.showError(
                                 context: context,
-                                title: 'Error',
+                                title: S.of(context).dialogErrorTitle,
                                 description: state.failure.errorMessage,
                               );
                             } else if (state is LoginSuccess) {
                               Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => MainNavigationScreen(),
+                                  builder: (context) =>
+                                      const MainNavigationScreen(),
                                 ),
                                 (route) => false,
                               );
@@ -106,14 +108,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                           builder: (context, state) {
                             if (state is LoginLoading) {
-                              return Center(
+                              return const Center(
                                 child: CircularProgressIndicator(
                                   color: AppColors.greenLightColor,
                                 ),
                               );
                             }
                             return CustomTextButton(
-                              text: 'Log In',
+                              text: S.of(context).logIn,
                               onTap: () {
                                 if (formKey.currentState!.validate()) {
                                   LoginCubit.get(context).loginUser(
@@ -129,20 +131,21 @@ class _LoginScreenState extends State<LoginScreen> {
                             );
                           },
                         ),
-                        SizedBox(height: 24),
+                        const SizedBox(height: 24),
                         AuthFooterSection(
-                          questionText: "Don't have account? ",
-                          actionText: 'SIGN UP',
+                          questionText: S.of(context).dontHaveAccount,
+                          actionText: S.of(context).signUpAction,
                           onActionTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => RegisterScreen(),
+                                builder: (context) =>
+                                    const RegisterScreen(),
                               ),
                             );
                           },
                         ),
-                        SizedBox(height: 24),
+                        const SizedBox(height: 24),
                       ],
                     ),
                   ),

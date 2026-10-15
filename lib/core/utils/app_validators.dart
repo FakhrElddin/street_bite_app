@@ -1,3 +1,5 @@
+import 'package:street_bite_app/generated/l10n.dart';
+
 class AppValidators {
   AppValidators._();
 
@@ -5,12 +7,10 @@ class AppValidators {
     RegExp emailRegex = RegExp(
       r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
     );
-    if (val == null) {
-      return 'this field is required';
-    } else if (val.trim().isEmpty) {
-      return 'this field is required';
+    if (val == null || val.trim().isEmpty) {
+      return S.current.fieldRequired;
     } else if (emailRegex.hasMatch(val) == false) {
-      return 'enter valid email';
+      return S.current.enterValidEmail;
     } else {
       return null;
     }
@@ -18,12 +18,10 @@ class AppValidators {
 
   static String? validatePassword(String? val) {
     RegExp passwordRegex = RegExp(r'^(?=.*[a-zA-Z])(?=.*[0-9])');
-    if (val == null) {
-      return 'this field is required';
-    } else if (val.isEmpty) {
-      return 'this field is required';
+    if (val == null || val.isEmpty) {
+      return S.current.fieldRequired;
     } else if (val.length < 8 || !passwordRegex.hasMatch(val)) {
-      return 'please enter strong password';
+      return S.current.enterStrongPassword;
     } else {
       return null;
     }
@@ -34,9 +32,9 @@ class AppValidators {
     String? password,
   ) {
     if (confirmPassword == null || confirmPassword.isEmpty) {
-      return 'this field is required';
+      return S.current.fieldRequired;
     } else if (confirmPassword != password) {
-      return 'please enter same password';
+      return S.current.enterSamePassword;
     } else {
       return null;
     }
@@ -44,12 +42,10 @@ class AppValidators {
 
   static String? validateUsername(String? val) {
     RegExp usernameRegex = RegExp(r'^[A-Z][a-zA-Z0-9,.-]*$');
-    if (val == null) {
-      return 'this field is required';
-    } else if (val.isEmpty) {
-      return 'this field is required';
+    if (val == null || val.isEmpty) {
+      return S.current.fieldRequired;
     } else if (!usernameRegex.hasMatch(val)) {
-      return 'please enter valid username';
+      return S.current.enterValidUsername;
     } else {
       return null;
     }
@@ -57,7 +53,7 @@ class AppValidators {
 
   static String? validate(String? val) {
     if (val == null || val.isEmpty) {
-      return 'this field is required';
+      return S.current.fieldRequired;
     } else {
       return null;
     }
@@ -65,9 +61,9 @@ class AppValidators {
 
   static String? validatePinCode(String? val, int codeLength) {
     if (val == null || val.isEmpty) {
-      return 'this field is required';
+      return S.current.fieldRequired;
     } else if (val.length != codeLength) {
-      return 'please complete code';
+      return S.current.completeCode;
     } else {
       return null;
     }
@@ -75,11 +71,11 @@ class AppValidators {
 
   static String? validatePhoneNumber(String? val) {
     if (val == null) {
-      return 'this field is required';
+      return S.current.fieldRequired;
     } else if (int.tryParse(val.trim()) == null) {
-      return 'enter numbers only';
+      return S.current.enterNumbersOnly;
     } else if (val.trim().length != 11) {
-      return 'enter value must equal 11 digit';
+      return S.current.phoneNumberLengthError;
     } else {
       return null;
     }

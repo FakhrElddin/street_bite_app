@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:street_bite_app/core/utils/app_colors.dart';
 
 class HomeViewAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const new({super.key});
+  const HomeViewAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

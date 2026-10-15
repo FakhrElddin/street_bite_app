@@ -1,0 +1,79 @@
+{
+  "@@locale": "en",
+  "appName": "Street Bite",
+
+  "loginHeadline": "Food and groceries delivered to you",
+  "emailLabel": "Email",
+  "emailHint": "Enter Your Email",
+  "passwordLabel": "Password",
+  "passwordHint": "Enter Your Password",
+  "logIn": "Log In",
+  "dontHaveAccount": "Don't have account? ",
+  "signUpAction": "SIGN UP",
+
+  "registerHeadline": "Your favorite street bites and essentials",
+  "nameLabel": "Name",
+  "nameHint": "Enter Your Name",
+  "confirmPasswordLabel": "Confirm Password",
+  "confirmPasswordHint": "Confirm Your Password",
+  "signUp": "Sign Up",
+  "haveAccount": "have account? ",
+  "loginAction": "LOG IN",
+
+  "fieldRequired": "this field is required",
+  "enterValidEmail": "enter valid email",
+  "enterStrongPassword": "please enter strong password",
+  "enterSamePassword": "please enter same password",
+  "enterValidUsername": "please enter valid username",
+  "enterNumbersOnly": "enter numbers only",
+  "phoneNumberLengthError": "enter value must equal 11 digit",
+  "completeCode": "please complete code",
+
+  "navHome": "Home",
+  "navOrders": "Orders",
+  "navCart": "Cart",
+  "navProfile": "Profile",
+
+  "featuredMeals": "Featured Meals",
+  "hotOffers": "Hot Offers",
+  "meals": "Meals",
+  "priceInEgp": "{price} L.E",
+  "@priceInEgp": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "italy": "Italy",
+  "morningDelightsCafe": "Morning Delights Café",
+
+  "profileTitle": "Profile",
+  "darkMode": "Dark Mode",
+  "lightMode": "Light Mode",
+  "language": "Language",
+  "english": "English",
+  "arabic": "العربية",
+
+  "cartTitle": "Cart",
+  "ordersTitle": "Orders",
+
+  "dialogErrorTitle": "Error",
+  "dialogSuccessTitle": "Success",
+  "dialogOk": "OK",
+  "dialogCancel": "Cancel",
+
+  "errWeakPassword": "The password provided is too weak.",
+  "errEmailInUse": "An account already exists for that email.",
+  "errInvalidEmail": "The email address is not valid.",
+  "errUserNotFound": "No user found for that email address.",
+  "errWrongPassword": "Wrong password provided for that user.",
+  "errUserDisabled": "This user account has been disabled.",
+  "errTooManyRequests": "Too many attempts. Please try again later.",
+  "errNetworkRequestFailed": "Network error. Please check your internet connection.",
+  "errInvalidCredential": "Invalid email or password. Please check your credentials.",
+  "errUnexpectedAuth": "An unexpected authentication error occurred.",
+  "errPermissionDenied": "Permission denied. You do not have access to this data.",
+  "errFirestoreUnavailable": "Firestore service is currently unavailable. Check your internet.",
+  "errDatabaseGeneric": "A database error occurred. Please try again."
+}

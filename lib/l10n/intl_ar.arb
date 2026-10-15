@@ -1,0 +1,79 @@
+{
+  "@@locale": "ar",
+  "appName": "ستريت بايت",
+
+  "loginHeadline": "طعام ومشتريات توصّل إليك",
+  "emailLabel": "البريد الإلكتروني",
+  "emailHint": "أدخل بريدك الإلكتروني",
+  "passwordLabel": "كلمة المرور",
+  "passwordHint": "أدخل كلمة المرور",
+  "logIn": "تسجيل الدخول",
+  "dontHaveAccount": "ليس لديك حساب؟ ",
+  "signUpAction": "إنشاء حساب",
+
+  "registerHeadline": "وجبات الشارع المفضلة واحتياجاتك اليومية",
+  "nameLabel": "الاسم",
+  "nameHint": "أدخل اسمك",
+  "confirmPasswordLabel": "تأكيد كلمة المرور",
+  "confirmPasswordHint": "أكّد كلمة المرور",
+  "signUp": "إنشاء حساب",
+  "haveAccount": "لديك حساب بالفعل؟ ",
+  "loginAction": "تسجيل الدخول",
+
+  "fieldRequired": "هذا الحقل مطلوب",
+  "enterValidEmail": "أدخل بريداً إلكترونياً صالحاً",
+  "enterStrongPassword": "يرجى إدخال كلمة مرور قوية",
+  "enterSamePassword": "يرجى إدخال نفس كلمة المرور",
+  "enterValidUsername": "يرجى إدخال اسم مستخدم صالح",
+  "enterNumbersOnly": "أدخل أرقاماً فقط",
+  "phoneNumberLengthError": "يجب أن يتكون الرقم من 11 رقماً",
+  "completeCode": "يرجى إكمال الرمز",
+
+  "navHome": "الرئيسية",
+  "navOrders": "الطلبات",
+  "navCart": "عربة التسوق",
+  "navProfile": "الملف الشخصي",
+
+  "featuredMeals": "الوجبات المميزة",
+  "hotOffers": "أقوى العروض",
+  "meals": "الوجبات",
+  "priceInEgp": "{price} ج.م",
+  "@priceInEgp": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "italy": "إيطاليا",
+  "morningDelightsCafe": "مقهى مورنينغ ديلايتس",
+
+  "profileTitle": "الملف الشخصي",
+  "darkMode": "الوضع الداكن",
+  "lightMode": "الوضع الفاتح",
+  "language": "اللغة",
+  "english": "English",
+  "arabic": "العربية",
+
+  "cartTitle": "عربة التسوق",
+  "ordersTitle": "الطلبات",
+
+  "dialogErrorTitle": "خطأ",
+  "dialogSuccessTitle": "نجاح",
+  "dialogOk": "حسناً",
+  "dialogCancel": "إلغاء",
+
+  "errWeakPassword": "كلمة المرور المدخلة ضعيفة جداً.",
+  "errEmailInUse": "يوجد حساب مسجل بالفعل بهذا البريد الإلكتروني.",
+  "errInvalidEmail": "صيغة البريد الإلكتروني غير صالحة.",
+  "errUserNotFound": "لا يوجد مستخدم مسجل بهذا البريد الإلكتروني.",
+  "errWrongPassword": "كلمة المرور غير صحيحة.",
+  "errUserDisabled": "تم تعطيل هذا الحساب.",
+  "errTooManyRequests": "محاولات كثيرة جداً. يرجى المحاولة لاحقاً.",
+  "errNetworkRequestFailed": "خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت.",
+  "errInvalidCredential": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+  "errUnexpectedAuth": "حدث خطأ غير متوقع أثناء المصادقة.",
+  "errPermissionDenied": "تم رفض الإذن. ليس لديك صلاحية للوصول إلى هذه البيانات.",
+  "errFirestoreUnavailable": "خدمة قاعدة البيانات غير متوفرة حالياً. تحقق من الإنترنت.",
+  "errDatabaseGeneric": "حدث خطأ في قاعدة البيانات. يرجى المحاولة مرة أخرى."
+}

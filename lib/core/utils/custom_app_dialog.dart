@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:street_bite_app/core/utils/app_assets.dart';
 import 'package:street_bite_app/core/utils/app_colors.dart';
 import 'package:street_bite_app/core/utils/app_text_styles.dart';
+import 'package:street_bite_app/generated/l10n.dart';
 
 enum AppDialogType { success, error, info }
 
@@ -274,7 +275,7 @@ class DialogActionButtons extends StatelessWidget {
                 ),
               ),
               child: Text(
-                btnCancelText ?? 'Cancel',
+                btnCancelText ?? S.current.dialogCancel,
                 style: AppTextStyles.dialogCancelButton(context),
               ),
             ),
@@ -295,7 +296,7 @@ class DialogActionButtons extends StatelessWidget {
                 ),
               ),
               child: Text(
-                btnOkText ?? 'OK',
+                btnOkText ?? S.current.dialogOk,
                 style: AppTextStyles.dialogOkButton,
               ),
             ),
@@ -320,7 +321,7 @@ class DialogActionButtons extends StatelessWidget {
           ),
         ),
         child: Text(
-          btnOkText ?? 'OK',
+          btnOkText ?? S.current.dialogOk,
           style: AppTextStyles.dialogOkButton,
         ),
       ),

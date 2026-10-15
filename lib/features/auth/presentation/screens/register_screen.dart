@@ -11,6 +11,7 @@ import 'package:street_bite_app/features/auth/presentation/manager/register_cubi
 import 'package:street_bite_app/features/auth/presentation/widgets/auth_footer_section.dart';
 import 'package:street_bite_app/features/auth/presentation/widgets/auth_header.dart';
 import 'package:street_bite_app/features/main_navigation/presentation/screens/main_navigation_screen.dart';
+import 'package:street_bite_app/generated/l10n.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -55,53 +56,53 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     backgroundImageHeight: screenHeight * 0.4,
                     logoHeight: screenHeight * 0.15,
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     child: Column(
                       children: [
                         Text(
-                          "Your favorite street bites and essentials",
-                          style: TextStyle(
+                          S.of(context).registerHeadline,
+                          style: const TextStyle(
                             color: Colors.white,
                             fontSize: 36,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         CustomTextFormField(
                           controller: nameController,
-                          labelText: 'Name',
-                          hintText: 'Enter Your Name',
+                          labelText: S.of(context).nameLabel,
+                          hintText: S.of(context).nameHint,
                           textInputAction: TextInputAction.next,
                           keyboardType: TextInputType.emailAddress,
                           validator: AppValidators.validateUsername,
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         CustomTextFormField(
                           controller: emailController,
-                          labelText: 'Email',
-                          hintText: 'Enter Your Email',
+                          labelText: S.of(context).emailLabel,
+                          hintText: S.of(context).emailHint,
                           textInputAction: TextInputAction.next,
                           keyboardType: TextInputType.emailAddress,
                           validator: AppValidators.validateEmail,
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         CustomTextFormField(
                           controller: passwordController,
-                          labelText: 'Password',
-                          hintText: 'Enter Your Password',
+                          labelText: S.of(context).passwordLabel,
+                          hintText: S.of(context).passwordHint,
                           isPassword: true,
                           textInputAction: TextInputAction.next,
                           keyboardType: TextInputType.visiblePassword,
                           validator: AppValidators.validatePassword,
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         CustomTextFormField(
                           controller: confirmPasswordController,
-                          labelText: 'Confirm Password',
-                          hintText: 'Confirm Your Password',
+                          labelText: S.of(context).confirmPasswordLabel,
+                          hintText: S.of(context).confirmPasswordHint,
                           isPassword: true,
                           textInputAction: TextInputAction.done,
                           keyboardType: TextInputType.visiblePassword,
@@ -112,20 +113,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             );
                           },
                         ),
-                        SizedBox(height: 24),
+                        const SizedBox(height: 24),
                         BlocConsumer<RegisterCubit, RegisterState>(
                           listener: (context, state) {
                             if (state is RegisterError) {
                               CustomAppDialog.showError(
                                 context: context,
-                                title: 'Error',
+                                title: S.of(context).dialogErrorTitle,
                                 description: state.failure.errorMessage,
                               );
                             } else if (state is RegisterSuccess) {
                               Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => MainNavigationScreen(),
+                                  builder: (context) =>
+                                      const MainNavigationScreen(),
                                 ),
                                 (route) => false,
                               );
@@ -133,14 +135,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                           builder: (context, state) {
                             if (state is RegisterLoading) {
-                              return Center(
+                              return const Center(
                                 child: CircularProgressIndicator(
                                   color: AppColors.greenLightColor,
                                 ),
                               );
                             }
                             return CustomTextButton(
-                              text: 'Sign Up',
+                              text: S.of(context).signUp,
                               onTap: () {
                                 if (formKey.currentState!.validate()) {
                                   RegisterCubit.get(context).registerUser(
@@ -157,10 +159,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             );
                           },
                         ),
-                        SizedBox(height: 24),
+                        const SizedBox(height: 24),
                         AuthFooterSection(
-                          questionText: "have account? ",
-                          actionText: 'LOG IN',
+                          questionText: S.of(context).haveAccount,
+                          actionText: S.of(context).loginAction,
                           onActionTap: () {
                             Navigator.pop(context);
                           },

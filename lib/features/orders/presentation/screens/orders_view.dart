@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:street_bite_app/generated/l10n.dart';
 
 class OrdersView extends StatelessWidget {
   const OrdersView({super.key});
@@ -7,7 +8,7 @@ class OrdersView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        'Orders',
+        S.of(context).ordersTitle,
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),

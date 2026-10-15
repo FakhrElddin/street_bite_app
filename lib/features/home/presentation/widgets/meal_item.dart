@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:street_bite_app/core/utils/app_assets.dart';
 import 'package:street_bite_app/core/utils/app_colors.dart';
+import 'package:street_bite_app/generated/l10n.dart';
 
 class MealItem extends StatelessWidget {
   const MealItem({super.key});
@@ -30,19 +31,22 @@ class MealItem extends StatelessWidget {
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 12),
                 child: Text(
-                  'Morning Delights Café Morning Delights Café Morning Delights Café Morning Delights Café Morning Delights Café',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  S.of(context).morningDelightsCafe,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           '4.9',
@@ -56,16 +60,16 @@ class MealItem extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      'Italy',
-                      style: TextStyle(
+                      S.of(context).italy,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: AppColors.greyColor,
                       ),
                     ),
                     Text(
-                      '450 L.E',
-                      style: TextStyle(
+                      S.of(context).priceInEgp('450'),
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                       ),
@@ -81,7 +85,7 @@ class MealItem extends StatelessWidget {
           child: CircleAvatar(
             child: IconButton(
               onPressed: () {},
-              icon: Icon(Icons.add_shopping_cart),
+              icon: const Icon(Icons.add_shopping_cart),
             ),
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:street_bite_app/core/errors/failures.dart';
+import 'package:street_bite_app/generated/l10n.dart';
 
 class AuthFailure extends Failures {
   AuthFailure({required super.errorMessage});
@@ -9,44 +10,28 @@ class AuthFailure extends Failures {
   ) {
     switch (authException.code) {
       case 'weak-password':
-        return AuthFailure(errorMessage: 'The password provided is too weak.');
+        return AuthFailure(errorMessage: S.current.errWeakPassword);
       case 'email-already-in-use':
-        return AuthFailure(
-          errorMessage: 'An account already exists for that email.',
-        );
+        return AuthFailure(errorMessage: S.current.errEmailInUse);
       case 'invalid-email':
-        return AuthFailure(errorMessage: 'The email address is not valid.');
+        return AuthFailure(errorMessage: S.current.errInvalidEmail);
       case 'user-not-found':
-        return AuthFailure(
-          errorMessage: 'No user found for that email address.',
-        );
+        return AuthFailure(errorMessage: S.current.errUserNotFound);
       case 'wrong-password':
-        return AuthFailure(
-          errorMessage: 'Wrong password provided for that user.',
-        );
+        return AuthFailure(errorMessage: S.current.errWrongPassword);
       case 'user-disabled':
-        return AuthFailure(
-          errorMessage: 'This user account has been disabled.',
-        );
+        return AuthFailure(errorMessage: S.current.errUserDisabled);
       case 'too-many-requests':
-        return AuthFailure(
-          errorMessage: 'Too many attempts. Please try again later.',
-        );
+        return AuthFailure(errorMessage: S.current.errTooManyRequests);
       case 'network-request-failed':
-        return AuthFailure(
-          errorMessage: 'Network error. Please check your internet connection.',
-        );
+        return AuthFailure(errorMessage: S.current.errNetworkRequestFailed);
       // login case
       case 'invalid-credential':
-        return AuthFailure(
-          errorMessage:
-              'Invalid email or password. Please check your credentials.',
-        );
+        return AuthFailure(errorMessage: S.current.errInvalidCredential);
       default:
         return AuthFailure(
           errorMessage:
-              authException.message ??
-              'An unexpected authentication error occurred.',
+              authException.message ?? S.current.errUnexpectedAuth,
         );
     }
   }
@@ -60,19 +45,15 @@ class FirestoreFailure extends Failures {
   ) {
     switch (firebaseException.code) {
       case "permission-denied":
-        return FirestoreFailure(
-          errorMessage:
-              'Permission denied. You do not have access to this data.',
-        );
+        return FirestoreFailure(errorMessage: S.current.errPermissionDenied);
       case "unavailable":
         return FirestoreFailure(
-          errorMessage: 'Firestore service is currently unavailable. Check your internet.',
+          errorMessage: S.current.errFirestoreUnavailable,
         );
       default:
         return FirestoreFailure(
           errorMessage:
-              firebaseException.message ??
-              'A database error occurred. Please try again.',
+              firebaseException.message ?? S.current.errDatabaseGeneric,
         );
     }
   }
