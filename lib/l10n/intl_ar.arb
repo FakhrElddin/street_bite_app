@@ -36,6 +36,10 @@
 
   "featuredMeals": "الوجبات المميزة",
   "hotOffers": "أقوى العروض",
+  "hotPicks": "أفضل الاختيارات",
+  "liveMenu": "القائمة المباشرة",
+  "addToCart": "أضف للسلة",
+  "hotPickBadge": "عرض ساخن",
   "meals": "الوجبات",
   "priceInEgp": "{price} ج.م",
   "@priceInEgp": {

@@ -300,6 +300,26 @@ class S {
     return Intl.message('Hot Offers', name: 'hotOffers', desc: '', args: []);
   }
 
+  /// `Hot Picks`
+  String get hotPicks {
+    return Intl.message('Hot Picks', name: 'hotPicks', desc: '', args: []);
+  }
+
+  /// `Live Menu`
+  String get liveMenu {
+    return Intl.message('Live Menu', name: 'liveMenu', desc: '', args: []);
+  }
+
+  /// `Add to Cart`
+  String get addToCart {
+    return Intl.message('Add to Cart', name: 'addToCart', desc: '', args: []);
+  }
+
+  /// `Hot Pick`
+  String get hotPickBadge {
+    return Intl.message('Hot Pick', name: 'hotPickBadge', desc: '', args: []);
+  }
+
   /// `Meals`
   String get meals {
     return Intl.message('Meals', name: 'meals', desc: '', args: []);

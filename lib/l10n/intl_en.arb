@@ -36,6 +36,10 @@
 
   "featuredMeals": "Featured Meals",
   "hotOffers": "Hot Offers",
+  "hotPicks": "Hot Picks",
+  "liveMenu": "Live Menu",
+  "addToCart": "Add to Cart",
+  "hotPickBadge": "Hot Pick",
   "meals": "Meals",
   "priceInEgp": "{price} L.E",
   "@priceInEgp": {

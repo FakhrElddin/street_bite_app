@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addToCart": MessageLookupByLibrary.simpleMessage("أضف للسلة"),
     "appName": MessageLookupByLibrary.simpleMessage("ستريت بايت"),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "cartTitle": MessageLookupByLibrary.simpleMessage("عربة التسوق"),
@@ -101,9 +102,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "fieldRequired": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟ "),
     "hotOffers": MessageLookupByLibrary.simpleMessage("أقوى العروض"),
+    "hotPickBadge": MessageLookupByLibrary.simpleMessage("عرض ساخن"),
+    "hotPicks": MessageLookupByLibrary.simpleMessage("أفضل الاختيارات"),
     "italy": MessageLookupByLibrary.simpleMessage("إيطاليا"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "lightMode": MessageLookupByLibrary.simpleMessage("الوضع الفاتح"),
+    "liveMenu": MessageLookupByLibrary.simpleMessage("القائمة المباشرة"),
     "logIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginAction": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginHeadline": MessageLookupByLibrary.simpleMessage(
