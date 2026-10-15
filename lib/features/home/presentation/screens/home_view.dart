@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:street_bite_app/features/home/presentation/widgets/featured_meals_list_view.dart';
+import 'package:street_bite_app/features/home/presentation/widgets/featured_banner_widget.dart';
+import 'package:street_bite_app/features/home/presentation/widgets/home_section_header.dart';
 import 'package:street_bite_app/features/home/presentation/widgets/home_view_app_bar.dart';
 import 'package:street_bite_app/features/home/presentation/widgets/hot_offers_list_view.dart';
 import 'package:street_bite_app/features/home/presentation/widgets/meals_sliver_grid.dart';
@@ -10,71 +11,61 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.sizeOf(context).height;
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: Column(
-            children: [
-              const HomeViewAppBar(),
-              const SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsetsDirectional.only(start: 16.0),
-                child: Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    S.of(context).featuredMeals,
-                    style: const TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
+    return Scaffold(
+      appBar: const HomeViewAppBar(),
+      body: RefreshIndicator(
+        onRefresh: () async {
+          await Future<void>.delayed(const Duration(milliseconds: 600));
+        },
+        child: CustomScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          slivers: [
+            // ── Featured meals header ─────────────────────────────────────────
+            SliverToBoxAdapter(
+              child: HomeSectionHeader(
+                title: S.of(context).featuredMeals,
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
               ),
-              const SizedBox(height: 4),
-              SizedBox(
-                height: screenHeight * 0.192,
-                child: const FeaturedMealsListView(),
+            ),
+
+            // ── Featured PageView banner ──────────────────────────────────────
+            const SliverToBoxAdapter(
+              child: FeaturedBannerWidget(),
+            ),
+
+            // ── Hot picks header ──────────────────────────────────────────────
+            SliverToBoxAdapter(
+              child: HomeSectionHeader(
+                title: S.of(context).hotPicks,
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
               ),
-              const SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsetsDirectional.only(start: 16.0),
-                child: Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    S.of(context).hotOffers,
-                    style: const TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
+            ),
+
+            // ── Hot picks horizontal list ─────────────────────────────────────
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 200,
+                child: HotOffersListView(),
               ),
-              const SizedBox(height: 4),
-              SizedBox(
-                height: screenHeight * 0.26,
-                child: const HotOffersListView(),
+            ),
+
+            // ── Live menu header ──────────────────────────────────────────────
+            SliverToBoxAdapter(
+              child: HomeSectionHeader(
+                title: S.of(context).liveMenu,
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
               ),
-              const SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsetsDirectional.only(start: 16.0),
-                child: Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    S.of(context).meals,
-                    style: const TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 4),
-            ],
-          ),
+            ),
+
+            // ── Two-column live menu grid ─────────────────────────────────────
+            const MealsSliverGrid(),
+
+            const SliverToBoxAdapter(
+              child: SizedBox(height: 24),
+            ),
+          ],
         ),
-        const MealsSliverGrid(),
-      ],
+      ),
     );
   }
 }
