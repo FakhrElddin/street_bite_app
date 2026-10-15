@@ -11,6 +11,7 @@ class ThemeCubit extends Cubit<ThemeState> {
     isDark =
         (SharedPrefsUtils.getData(key: AppConstants.isDarkKey) as bool?) ??
         false;
+    _updateSystemStatusBar();
   }
 
   static ThemeCubit get(BuildContext context) => BlocProvider.of(context);
