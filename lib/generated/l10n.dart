@@ -275,6 +275,11 @@ class S {
     return Intl.message('Orders', name: 'navOrders', desc: '', args: []);
   }
 
+  /// `Favorites`
+  String get navFavorites {
+    return Intl.message('Favorites', name: 'navFavorites', desc: '', args: []);
+  }
+
   /// `Cart`
   String get navCart {
     return Intl.message('Cart', name: 'navCart', desc: '', args: []);
@@ -388,6 +393,16 @@ class S {
   /// `Orders`
   String get ordersTitle {
     return Intl.message('Orders', name: 'ordersTitle', desc: '', args: []);
+  }
+
+  /// `Favorites`
+  String get favoritesTitle {
+    return Intl.message(
+      'Favorites',
+      name: 'favoritesTitle',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Error`
@@ -540,6 +555,353 @@ class S {
     return Intl.message(
       'A database error occurred. Please try again.',
       name: 'errDatabaseGeneric',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Instructions`
+  String get instructionsTitle {
+    return Intl.message(
+      'Instructions',
+      name: 'instructionsTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Read more`
+  String get readMore {
+    return Intl.message('Read more', name: 'readMore', desc: '', args: []);
+  }
+
+  /// `Read less`
+  String get readLess {
+    return Intl.message('Read less', name: 'readLess', desc: '', args: []);
+  }
+
+  /// `Category`
+  String get categoryLabel {
+    return Intl.message('Category', name: 'categoryLabel', desc: '', args: []);
+  }
+
+  /// `Origin`
+  String get originLabel {
+    return Intl.message('Origin', name: 'originLabel', desc: '', args: []);
+  }
+
+  /// `Added to cart`
+  String get itemAddedToCart {
+    return Intl.message(
+      'Added to cart',
+      name: 'itemAddedToCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Added to favorites`
+  String get addedToFavorites {
+    return Intl.message(
+      'Added to favorites',
+      name: 'addedToFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Removed from favorites`
+  String get removedFromFavorites {
+    return Intl.message(
+      'Removed from favorites',
+      name: 'removedFromFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your cart is empty`
+  String get emptyCartTitle {
+    return Intl.message(
+      'Your cart is empty',
+      name: 'emptyCartTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Looks like you haven't added anything to your cart yet`
+  String get emptyCartSubtitle {
+    return Intl.message(
+      'Looks like you haven\'t added anything to your cart yet',
+      name: 'emptyCartSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No favorites yet`
+  String get emptyFavoritesTitle {
+    return Intl.message(
+      'No favorites yet',
+      name: 'emptyFavoritesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save meals to your favorites to find them easily here`
+  String get emptyFavoritesSubtitle {
+    return Intl.message(
+      'Save meals to your favorites to find them easily here',
+      name: 'emptyFavoritesSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subtotal`
+  String get subtotal {
+    return Intl.message('Subtotal', name: 'subtotal', desc: '', args: []);
+  }
+
+  /// `Delivery Fee`
+  String get deliveryFee {
+    return Intl.message(
+      'Delivery Fee',
+      name: 'deliveryFee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Free`
+  String get free {
+    return Intl.message('Free', name: 'free', desc: '', args: []);
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message('Total', name: 'total', desc: '', args: []);
+  }
+
+  /// `Checkout`
+  String get checkout {
+    return Intl.message('Checkout', name: 'checkout', desc: '', args: []);
+  }
+
+  /// `Clear Cart`
+  String get clearCart {
+    return Intl.message('Clear Cart', name: 'clearCart', desc: '', args: []);
+  }
+
+  /// `Cart cleared`
+  String get cartCleared {
+    return Intl.message(
+      'Cart cleared',
+      name: 'cartCleared',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please log in to manage your favorites`
+  String get loginRequiredFavorites {
+    return Intl.message(
+      'Please log in to manage your favorites',
+      name: 'loginRequiredFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =1{1 item} other{{count} items}}`
+  String cartItemCount(num count) {
+    return Intl.plural(
+      count,
+      one: '1 item',
+      other: '$count items',
+      name: 'cartItemCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Select Payment Method`
+  String get selectPaymentMethod {
+    return Intl.message(
+      'Select Payment Method',
+      name: 'selectPaymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay with Card`
+  String get payWithCard {
+    return Intl.message(
+      'Pay with Card',
+      name: 'payWithCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit or debit card`
+  String get payWithCardSubtitle {
+    return Intl.message(
+      'Credit or debit card',
+      name: 'payWithCardSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash on Delivery`
+  String get cashOnDelivery {
+    return Intl.message(
+      'Cash on Delivery',
+      name: 'cashOnDelivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay with cash upon arrival`
+  String get cashOnDeliverySubtitle {
+    return Intl.message(
+      'Pay with cash upon arrival',
+      name: 'cashOnDeliverySubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Order`
+  String get confirmOrder {
+    return Intl.message(
+      'Confirm Order',
+      name: 'confirmOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your order has been placed successfully!`
+  String get orderPlacedSuccessfully {
+    return Intl.message(
+      'Your order has been placed successfully!',
+      name: 'orderPlacedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please log in to place an order`
+  String get loginRequiredToCheckout {
+    return Intl.message(
+      'Please log in to place an order',
+      name: 'loginRequiredToCheckout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order History`
+  String get ordersHistory {
+    return Intl.message(
+      'Order History',
+      name: 'ordersHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No orders placed yet`
+  String get noOrdersYet {
+    return Intl.message(
+      'No orders placed yet',
+      name: 'noOrdersYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No favorites added yet`
+  String get noFavoritesYet {
+    return Intl.message(
+      'No favorites added yet',
+      name: 'noFavoritesYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log Out`
+  String get logOut {
+    return Intl.message('Log Out', name: 'logOut', desc: '', args: []);
+  }
+
+  /// `Choose Image Source`
+  String get chooseImageSource {
+    return Intl.message(
+      'Choose Image Source',
+      name: 'chooseImageSource',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message('Camera', name: 'camera', desc: '', args: []);
+  }
+
+  /// `Gallery`
+  String get gallery {
+    return Intl.message('Gallery', name: 'gallery', desc: '', args: []);
+  }
+
+  /// `Updating photo...`
+  String get uploadingPhoto {
+    return Intl.message(
+      'Updating photo...',
+      name: 'uploadingPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Photo`
+  String get changePhoto {
+    return Intl.message(
+      'Change Photo',
+      name: 'changePhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Guest User`
+  String get guestUser {
+    return Intl.message('Guest User', name: 'guestUser', desc: '', args: []);
+  }
+
+  /// `Favorites`
+  String get favorites {
+    return Intl.message('Favorites', name: 'favorites', desc: '', args: []);
+  }
+
+  /// `Orders`
+  String get orders {
+    return Intl.message('Orders', name: 'orders', desc: '', args: []);
+  }
+
+  /// `Are you sure you want to log out?`
+  String get logOutConfirmMessage {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'logOutConfirmMessage',
       desc: '',
       args: [],
     );

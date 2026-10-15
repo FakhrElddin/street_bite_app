@@ -31,6 +31,7 @@
 
   "navHome": "Home",
   "navOrders": "Orders",
+  "navFavorites": "Favorites",
   "navCart": "Cart",
   "navProfile": "Profile",
 
@@ -61,6 +62,7 @@
 
   "cartTitle": "Cart",
   "ordersTitle": "Orders",
+  "favoritesTitle": "Favorites",
 
   "dialogErrorTitle": "Error",
   "dialogSuccessTitle": "Success",
@@ -79,5 +81,59 @@
   "errUnexpectedAuth": "An unexpected authentication error occurred.",
   "errPermissionDenied": "Permission denied. You do not have access to this data.",
   "errFirestoreUnavailable": "Firestore service is currently unavailable. Check your internet.",
-  "errDatabaseGeneric": "A database error occurred. Please try again."
+  "errDatabaseGeneric": "A database error occurred. Please try again.",
+
+  "instructionsTitle": "Instructions",
+  "readMore": "Read more",
+  "readLess": "Read less",
+  "categoryLabel": "Category",
+  "originLabel": "Origin",
+  "itemAddedToCart": "Added to cart",
+  "addedToFavorites": "Added to favorites",
+  "removedFromFavorites": "Removed from favorites",
+
+  "emptyCartTitle": "Your cart is empty",
+  "emptyCartSubtitle": "Looks like you haven't added anything to your cart yet",
+  "emptyFavoritesTitle": "No favorites yet",
+  "emptyFavoritesSubtitle": "Save meals to your favorites to find them easily here",
+  "subtotal": "Subtotal",
+  "deliveryFee": "Delivery Fee",
+  "free": "Free",
+  "total": "Total",
+  "checkout": "Checkout",
+  "clearCart": "Clear Cart",
+  "cartCleared": "Cart cleared",
+  "loginRequiredFavorites": "Please log in to manage your favorites",
+  "cartItemCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@cartItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+
+  "selectPaymentMethod": "Select Payment Method",
+  "payWithCard": "Pay with Card",
+  "payWithCardSubtitle": "Credit or debit card",
+  "cashOnDelivery": "Cash on Delivery",
+  "cashOnDeliverySubtitle": "Pay with cash upon arrival",
+  "confirmOrder": "Confirm Order",
+  "orderPlacedSuccessfully": "Your order has been placed successfully!",
+  "loginRequiredToCheckout": "Please log in to place an order",
+  "ordersHistory": "Order History",
+  "noOrdersYet": "No orders placed yet",
+  "noFavoritesYet": "No favorites added yet",
+  "logOut": "Log Out",
+  "chooseImageSource": "Choose Image Source",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "uploadingPhoto": "Updating photo...",
+  "changePhoto": "Change Photo",
+  "guestUser": "Guest User",
+  "favorites": "Favorites",
+  "orders": "Orders",
+  "logOutConfirmMessage": "Are you sure you want to log out?"
 }
+
+

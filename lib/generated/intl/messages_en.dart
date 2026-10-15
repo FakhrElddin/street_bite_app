@@ -20,17 +20,38 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(price) => "${price} L.E";
+  static String m0(count) =>
+      "${Intl.plural(count, one: '1 item', other: '${count} items')}";
+
+  static String m1(price) => "${price} L.E";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "addToCart": MessageLookupByLibrary.simpleMessage("Add to Cart"),
+    "addedToFavorites": MessageLookupByLibrary.simpleMessage(
+      "Added to favorites",
+    ),
     "appName": MessageLookupByLibrary.simpleMessage("Street Bite"),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+    "camera": MessageLookupByLibrary.simpleMessage("Camera"),
+    "cartCleared": MessageLookupByLibrary.simpleMessage("Cart cleared"),
+    "cartItemCount": m0,
     "cartTitle": MessageLookupByLibrary.simpleMessage("Cart"),
+    "cashOnDelivery": MessageLookupByLibrary.simpleMessage("Cash on Delivery"),
+    "cashOnDeliverySubtitle": MessageLookupByLibrary.simpleMessage(
+      "Pay with cash upon arrival",
+    ),
+    "categoryLabel": MessageLookupByLibrary.simpleMessage("Category"),
+    "changePhoto": MessageLookupByLibrary.simpleMessage("Change Photo"),
+    "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
+    "chooseImageSource": MessageLookupByLibrary.simpleMessage(
+      "Choose Image Source",
+    ),
+    "clearCart": MessageLookupByLibrary.simpleMessage("Clear Cart"),
     "completeCode": MessageLookupByLibrary.simpleMessage(
       "please complete code",
     ),
+    "confirmOrder": MessageLookupByLibrary.simpleMessage("Confirm Order"),
     "confirmPasswordHint": MessageLookupByLibrary.simpleMessage(
       "Confirm Your Password",
     ),
@@ -38,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Confirm Password",
     ),
     "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
+    "deliveryFee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
     "dialogCancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "dialogErrorTitle": MessageLookupByLibrary.simpleMessage("Error"),
     "dialogOk": MessageLookupByLibrary.simpleMessage("OK"),
@@ -47,6 +69,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "emailHint": MessageLookupByLibrary.simpleMessage("Enter Your Email"),
     "emailLabel": MessageLookupByLibrary.simpleMessage("Email"),
+    "emptyCartSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Looks like you haven\'t added anything to your cart yet",
+    ),
+    "emptyCartTitle": MessageLookupByLibrary.simpleMessage(
+      "Your cart is empty",
+    ),
+    "emptyFavoritesSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Save meals to your favorites to find them easily here",
+    ),
+    "emptyFavoritesTitle": MessageLookupByLibrary.simpleMessage(
+      "No favorites yet",
+    ),
     "english": MessageLookupByLibrary.simpleMessage("English"),
     "enterNumbersOnly": MessageLookupByLibrary.simpleMessage(
       "enter numbers only",
@@ -102,22 +136,39 @@ class MessageLookup extends MessageLookupByLibrary {
     "errWrongPassword": MessageLookupByLibrary.simpleMessage(
       "Wrong password provided for that user.",
     ),
+    "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
+    "favoritesTitle": MessageLookupByLibrary.simpleMessage("Favorites"),
     "featuredMeals": MessageLookupByLibrary.simpleMessage("Featured Meals"),
     "fieldRequired": MessageLookupByLibrary.simpleMessage(
       "this field is required",
     ),
+    "free": MessageLookupByLibrary.simpleMessage("Free"),
+    "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
+    "guestUser": MessageLookupByLibrary.simpleMessage("Guest User"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("have account? "),
     "hotOffers": MessageLookupByLibrary.simpleMessage("Hot Offers"),
     "hotPickBadge": MessageLookupByLibrary.simpleMessage("Hot Pick"),
     "hotPicks": MessageLookupByLibrary.simpleMessage("Hot Picks"),
+    "instructionsTitle": MessageLookupByLibrary.simpleMessage("Instructions"),
     "italy": MessageLookupByLibrary.simpleMessage("Italy"),
+    "itemAddedToCart": MessageLookupByLibrary.simpleMessage("Added to cart"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
     "liveMenu": MessageLookupByLibrary.simpleMessage("Live Menu"),
     "logIn": MessageLookupByLibrary.simpleMessage("Log In"),
+    "logOut": MessageLookupByLibrary.simpleMessage("Log Out"),
+    "logOutConfirmMessage": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to log out?",
+    ),
     "loginAction": MessageLookupByLibrary.simpleMessage("LOG IN"),
     "loginHeadline": MessageLookupByLibrary.simpleMessage(
       "Food and groceries delivered to you",
+    ),
+    "loginRequiredFavorites": MessageLookupByLibrary.simpleMessage(
+      "Please log in to manage your favorites",
+    ),
+    "loginRequiredToCheckout": MessageLookupByLibrary.simpleMessage(
+      "Please log in to place an order",
     ),
     "meals": MessageLookupByLibrary.simpleMessage("Meals"),
     "morningDelightsCafe": MessageLookupByLibrary.simpleMessage(
@@ -126,21 +177,47 @@ class MessageLookup extends MessageLookupByLibrary {
     "nameHint": MessageLookupByLibrary.simpleMessage("Enter Your Name"),
     "nameLabel": MessageLookupByLibrary.simpleMessage("Name"),
     "navCart": MessageLookupByLibrary.simpleMessage("Cart"),
+    "navFavorites": MessageLookupByLibrary.simpleMessage("Favorites"),
     "navHome": MessageLookupByLibrary.simpleMessage("Home"),
     "navOrders": MessageLookupByLibrary.simpleMessage("Orders"),
     "navProfile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "noFavoritesYet": MessageLookupByLibrary.simpleMessage(
+      "No favorites added yet",
+    ),
+    "noOrdersYet": MessageLookupByLibrary.simpleMessage("No orders placed yet"),
+    "orderPlacedSuccessfully": MessageLookupByLibrary.simpleMessage(
+      "Your order has been placed successfully!",
+    ),
+    "orders": MessageLookupByLibrary.simpleMessage("Orders"),
+    "ordersHistory": MessageLookupByLibrary.simpleMessage("Order History"),
     "ordersTitle": MessageLookupByLibrary.simpleMessage("Orders"),
+    "originLabel": MessageLookupByLibrary.simpleMessage("Origin"),
     "passwordHint": MessageLookupByLibrary.simpleMessage("Enter Your Password"),
     "passwordLabel": MessageLookupByLibrary.simpleMessage("Password"),
+    "payWithCard": MessageLookupByLibrary.simpleMessage("Pay with Card"),
+    "payWithCardSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Credit or debit card",
+    ),
     "phoneNumberLengthError": MessageLookupByLibrary.simpleMessage(
       "enter value must equal 11 digit",
     ),
-    "priceInEgp": m0,
+    "priceInEgp": m1,
     "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
+    "readLess": MessageLookupByLibrary.simpleMessage("Read less"),
+    "readMore": MessageLookupByLibrary.simpleMessage("Read more"),
     "registerHeadline": MessageLookupByLibrary.simpleMessage(
       "Your favorite street bites and essentials",
     ),
+    "removedFromFavorites": MessageLookupByLibrary.simpleMessage(
+      "Removed from favorites",
+    ),
+    "selectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Select Payment Method",
+    ),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "signUpAction": MessageLookupByLibrary.simpleMessage("SIGN UP"),
+    "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
+    "total": MessageLookupByLibrary.simpleMessage("Total"),
+    "uploadingPhoto": MessageLookupByLibrary.simpleMessage("Updating photo..."),
   };
 }
