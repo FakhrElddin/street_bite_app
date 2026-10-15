@@ -45,6 +45,7 @@ dependencies:
   flutter_svg: ^2.3.0
   get_it: ^9.3.0
   shared_preferences: ^2.5.6
+  cached_network_image: ^4.0.4
 
 dev_dependencies:
   intl_utils: ^2.8.7
