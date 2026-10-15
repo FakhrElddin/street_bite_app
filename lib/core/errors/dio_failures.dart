@@ -39,7 +39,3 @@ class NetworkFailure extends Failures {
     super.errorMessage = 'No Internet Connection, Please Check Your Network',
   });
 }
-
-class UnexpectedError extends Failures {
-  UnexpectedError({required super.errorMessage});
-}
