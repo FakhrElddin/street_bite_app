@@ -8,6 +8,7 @@ class HotPickCard extends StatelessWidget {
   final String title;
   final String? badgeText;
   final VoidCallback? onAddToCart;
+  final VoidCallback? onTap;
 
   const HotPickCard({
     super.key,
@@ -15,14 +16,17 @@ class HotPickCard extends StatelessWidget {
     required this.title,
     this.badgeText,
     this.onAddToCart,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Container(
-      width: 140,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+      width: 148,
       decoration: BoxDecoration(
         color: isDark ? AppColors.cardDark : Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -40,11 +44,11 @@ class HotPickCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: CachedNetworkImage(
               imageUrl: imageUrl,
-              height: 90,
+              height: 105,
               width: double.infinity,
               fit: BoxFit.cover,
               placeholder: (context, url) => Container(
-                height: 90,
+                height: 105,
                 color: isDark ? Colors.grey.shade800 : Colors.grey.shade200,
                 child: const Center(
                   child: SizedBox(
@@ -55,7 +59,7 @@ class HotPickCard extends StatelessWidget {
                 ),
               ),
               errorWidget: (context, url, error) => Container(
-                height: 90,
+                height: 105,
                 color: isDark ? Colors.grey.shade800 : Colors.grey.shade200,
                 child: const Icon(Icons.broken_image_outlined, size: 28),
               ),
@@ -122,6 +126,7 @@ class HotPickCard extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ),
+  );
   }
 }

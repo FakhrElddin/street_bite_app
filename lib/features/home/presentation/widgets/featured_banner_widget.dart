@@ -1,44 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:street_bite_app/core/utils/app_colors.dart';
 import 'package:street_bite_app/features/home/data/models/banner_item_model.dart';
+import 'package:street_bite_app/features/home/domain/entities/meals_response_entity.dart';
 import 'package:street_bite_app/features/home/presentation/widgets/featured_banner_item.dart';
+
+import 'package:street_bite_app/features/home/presentation/screens/meal_details_view.dart';
 
 /// Horizontally swipeable PageView banner showing featured meals.
 /// Shows dot indicators when there are multiple pages.
 class FeaturedBannerWidget extends StatefulWidget {
-  final List<BannerItemModel> banners;
+  final List<MealItemEntity>? meals;
+  final List<BannerItemModel>? banners;
   final double? height;
-
-  static const List<BannerItemModel> defaultBanners = [
-    BannerItemModel(
-      imageUrl:
-          'https://www.themealdb.com/images/media/meals/1529444830.jpg',
-      title: 'Air fryer patatas bravas',
-      category: 'Vegetarian',
-    ),
-    BannerItemModel(
-      imageUrl:
-          'https://www.themealdb.com/images/media/meals/1529446352.jpg',
-      title: 'Adana Kebab Platter',
-      category: 'Lamb',
-    ),
-    BannerItemModel(
-      imageUrl:
-          'https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg',
-      title: 'Loaded Mexican Nachos',
-      category: 'Chef Recommendation',
-    ),
-    BannerItemModel(
-      imageUrl:
-          'https://www.themealdb.com/images/media/meals/urzj1d1587670726.jpg',
-      title: 'Classic Gourmet Burger',
-      category: 'Popular',
-    ),
-  ];
 
   const FeaturedBannerWidget({
     super.key,
-    this.banners = defaultBanners,
+    this.meals,
+    this.banners,
     this.height,
   });
 
@@ -58,7 +36,26 @@ class _FeaturedBannerWidgetState extends State<FeaturedBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.banners.isEmpty) return const SizedBox.shrink();
+    final List<({String imageUrl, String title, String category})> items;
+    if (widget.meals != null && widget.meals!.isNotEmpty) {
+      items = widget.meals!
+          .map((m) => (
+                imageUrl: m.strMealThumb ?? '',
+                title: m.strMeal ?? '',
+                category: m.strCategory ?? 'Featured',
+              ))
+          .toList();
+    } else if (widget.banners != null && widget.banners!.isNotEmpty) {
+      items = widget.banners!
+          .map((b) => (
+                imageUrl: b.imageUrl,
+                title: b.title,
+                category: b.category,
+              ))
+          .toList();
+    } else {
+      return const SizedBox.shrink();
+    }
 
     final bannerHeight = widget.height ?? 200.0;
 
@@ -68,23 +65,34 @@ class _FeaturedBannerWidgetState extends State<FeaturedBannerWidget> {
           height: bannerHeight,
           child: PageView.builder(
             controller: _pageController,
-            itemCount: widget.banners.length,
+            itemCount: items.length,
             onPageChanged: (i) => setState(() => _currentPage = i),
             itemBuilder: (context, index) {
-              final banner = widget.banners[index];
+              final item = items[index];
               return FeaturedBannerItem(
-                imageUrl: banner.imageUrl,
-                title: banner.title,
-                category: banner.category,
+                imageUrl: item.imageUrl,
+                title: item.title,
+                category: item.category,
+                onTap: widget.meals != null && index < widget.meals!.length
+                    ? () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => MealDetailsView(
+                              meal: widget.meals![index],
+                            ),
+                          ),
+                        );
+                      }
+                    : null,
               );
             },
           ),
         ),
-        if (widget.banners.length > 1) ...[
+        if (items.length > 1) ...[
           const SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(widget.banners.length, (i) {
+            children: List.generate(items.length, (i) {
               final isDark = Theme.of(context).brightness == Brightness.dark;
               return AnimatedContainer(
                 duration: const Duration(milliseconds: 300),

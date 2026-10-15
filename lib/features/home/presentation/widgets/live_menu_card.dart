@@ -8,6 +8,7 @@ class LiveMenuCard extends StatelessWidget {
   final String title;
   final String category;
   final VoidCallback? onAddToCart;
+  final VoidCallback? onTap;
 
   const LiveMenuCard({
     super.key,
@@ -15,13 +16,16 @@ class LiveMenuCard extends StatelessWidget {
     required this.title,
     required this.category,
     this.onAddToCart,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Container(
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
       decoration: BoxDecoration(
         color: isDark ? AppColors.cardDark : Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -35,28 +39,28 @@ class LiveMenuCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Food image with CachedNetworkImage
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: CachedNetworkImage(
-              imageUrl: imageUrl,
-              height: 170,
-              width: double.infinity,
-              fit: BoxFit.cover,
-              placeholder: (context, url) => Container(
-                height: 170,
-                color: isDark ? Colors.grey.shade800 : Colors.grey.shade200,
-                child: const Center(
-                  child: SizedBox(
-                    width: 24,
-                    height: 24,
-                    child: CircularProgressIndicator(strokeWidth: 2),
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: CachedNetworkImage(
+                imageUrl: imageUrl,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
+                placeholder: (context, url) => Container(
+                  color: isDark ? Colors.grey.shade800 : Colors.grey.shade200,
+                  child: const Center(
+                    child: SizedBox(
+                      width: 24,
+                      height: 24,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
                   ),
                 ),
-              ),
-              errorWidget: (context, url, error) => Container(
-                height: 170,
-                color: isDark ? Colors.grey.shade800 : Colors.grey.shade200,
-                child: const Icon(Icons.broken_image_outlined, size: 32),
+                errorWidget: (context, url, error) => Container(
+                  color: isDark ? Colors.grey.shade800 : Colors.grey.shade200,
+                  child: const Icon(Icons.broken_image_outlined, size: 32),
+                ),
               ),
             ),
           ),
@@ -83,7 +87,7 @@ class LiveMenuCard extends StatelessWidget {
                   : AppColors.textSecondaryLight,
             ),
           ),
-          const Spacer(),
+          const SizedBox(height: 8),
 
           // Solid Add to Cart Button
           SizedBox(
@@ -111,6 +115,7 @@ class LiveMenuCard extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ),
+  );
   }
 }

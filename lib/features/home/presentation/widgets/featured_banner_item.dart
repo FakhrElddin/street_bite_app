@@ -5,19 +5,23 @@ class FeaturedBannerItem extends StatelessWidget {
   final String imageUrl;
   final String? title;
   final String? category;
+  final VoidCallback? onTap;
 
   const FeaturedBannerItem({
     super.key,
     required this.imageUrl,
     this.title,
     this.category,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: ClipRRect(
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: Stack(
           fit: StackFit.expand,
@@ -96,6 +100,7 @@ class FeaturedBannerItem extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ),
+  );
   }
 }
