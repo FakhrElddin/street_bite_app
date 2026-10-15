@@ -46,6 +46,7 @@ dependencies:
   get_it: ^9.3.0
   shared_preferences: ^2.5.6
   cached_network_image: ^4.0.4
+  image_picker: ^1.2.4
 
 dev_dependencies:
   intl_utils: ^2.8.7
