@@ -9,8 +9,8 @@ part 'theme_state.dart';
 class ThemeCubit extends Cubit<ThemeState> {
   ThemeCubit() : super(ThemeInitial()) {
     isDark =
-        (SharedPrefsUtils.getData(key: AppConstants.isDarkKey) as bool?) ?? false;
-    _updateSystemStatusBar();
+        (SharedPrefsUtils.getData(key: AppConstants.isDarkKey) as bool?) ??
+        false;
   }
 
   static ThemeCubit get(BuildContext context) => BlocProvider.of(context);
