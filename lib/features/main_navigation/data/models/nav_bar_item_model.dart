@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:street_bite_app/generated/l10n.dart';
 
-enum NavBarTab { home, orders, cart, profile }
+enum NavBarTab { home, orders, favorites, cart, profile }
 
 class NavBarItemModel {
   final IconData icon;
@@ -20,6 +20,8 @@ class NavBarItemModel {
         return S.of(context).navHome;
       case NavBarTab.orders:
         return S.of(context).navOrders;
+      case NavBarTab.favorites:
+        return S.of(context).navFavorites;
       case NavBarTab.cart:
         return S.of(context).navCart;
       case NavBarTab.profile:

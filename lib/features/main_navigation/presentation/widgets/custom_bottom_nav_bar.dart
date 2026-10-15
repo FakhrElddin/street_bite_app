@@ -19,9 +19,9 @@ class CustomBottomNavBar extends StatelessWidget {
       tab: NavBarTab.home,
     ),
     NavBarItemModel(
-      icon: Icons.receipt_long_outlined,
-      activeIcon: Icons.receipt_long,
-      tab: NavBarTab.orders,
+      icon: Icons.favorite_border,
+      activeIcon: Icons.favorite,
+      tab: NavBarTab.favorites,
     ),
     NavBarItemModel(
       icon: Icons.shopping_cart_outlined,

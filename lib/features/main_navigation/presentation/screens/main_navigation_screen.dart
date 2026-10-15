@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:street_bite_app/features/cart/presentation/screens/cart_view.dart';
+import 'package:street_bite_app/features/favorites/presentation/screens/favorites_view.dart';
 import 'package:street_bite_app/features/home/presentation/screens/home_view.dart';
 import 'package:street_bite_app/features/main_navigation/presentation/widgets/custom_bottom_nav_bar.dart';
-import 'package:street_bite_app/features/orders/presentation/screens/orders_view.dart';
 import 'package:street_bite_app/features/profile/presentation/screens/profile_view.dart';
 
 class MainNavigationScreen extends StatefulWidget {
@@ -17,7 +17,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   final List<Widget> _views = const [
     HomeView(),
-    OrdersView(),
+    FavoritesView(),
     CartView(),
     ProfileView(),
   ];
