@@ -8,6 +8,8 @@ import 'package:street_bite_app/core/di/di.dart';
 import 'package:street_bite_app/core/localization/cubit/change_language_cubit.dart';
 import 'package:street_bite_app/core/localization/cubit/change_language_state.dart';
 import 'package:street_bite_app/core/utils/app_constants.dart';
+import 'package:street_bite_app/features/cart/presentation/manager/cart_cubit.dart';
+import 'package:street_bite_app/features/favorites/presentation/manager/favorites_cubit.dart';
 import 'package:street_bite_app/features/main_navigation/presentation/manager/cubit/theme_cubit.dart';
 import 'package:street_bite_app/features/splash/presentation/screens/splash_screen.dart';
 import 'package:street_bite_app/firebase_options.dart';
@@ -33,6 +35,8 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => ThemeCubit()),
         BlocProvider(create: (context) => ChangeLanguageCubit()),
+        BlocProvider(create: (context) => getIt<CartCubit>()..loadCart()),
+        BlocProvider(create: (context) => getIt<FavoritesCubit>()..getFavorites()),
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (context, themeState) {
