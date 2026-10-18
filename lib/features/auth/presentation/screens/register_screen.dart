@@ -109,7 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           validator: (value) {
                             return AppValidators.validateConfirmPassword(
                               value,
-                              confirmPasswordController.text,
+                              passwordController.text,
                             );
                           },
                         ),
