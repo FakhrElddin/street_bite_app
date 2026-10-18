@@ -74,12 +74,30 @@ The app also features **live vendor tracking with Google Maps and GPS**, **biome
 
 ---
 
-### 5. Arabic Localization, Feedback & App Distribution
+### 5. Arabic Localization & In-App Feedback
 
-| Arabic Login (RTL) | In-App Feedback & SnackBar | Firebase Distribution Email | Firebase Testers Console |
-| :---: | :---: | :---: | :---: |
-| <img src="screenshots/17_login_screen_ar.png" width="180" /> | <img src="screenshots/15_home_screen_snackbar_ar.png" width="180" /> | <img src="screenshots/20_firebase_distribution_invitation_email.png" width="180" /> | <img src="screenshots/21_firebase_distribution_testers_console.png" width="180" /> |
-| Full RTL Form Layout | Instant Contextual Alerts | Tester Invitation Dispatch | Active Release Management |
+| Arabic Login (RTL) | In-App Feedback & SnackBar |
+| :---: | :---: |
+| <img src="screenshots/17_login_screen_ar.png" width="220" /> | <img src="screenshots/15_home_screen_snackbar_ar.png" width="220" /> |
+| Full RTL Form Layout | Instant Contextual Alerts |
+
+---
+
+### 6. Profile Customization & Order History
+
+| Avatar Picker Dialog | Updated Profile Screen | Order History |
+| :---: | :---: | :---: |
+| <img src="screenshots/23_profile_avatar_picker_dialog.png" width="220" /> | <img src="screenshots/24_profile_screen_updated_avatar.png" width="220" /> | <img src="screenshots/22_profile_screen_order_history.png" width="220" /> |
+| Custom Avatar Selection | Dynamic Avatar Refresh | Past Orders & Order History |
+
+---
+
+### 7. Firebase App Distribution
+
+| Firebase Distribution Email | Firebase Testers Console |
+| :---: | :---: |
+| <img src="screenshots/20_firebase_distribution_invitation_email.png" width="220" /> | <img src="screenshots/21_firebase_distribution_testers_console.png" width="220" /> |
+| Tester Invitation Dispatch | Active Release Management |
 
 ---
 
