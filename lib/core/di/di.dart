@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:street_bite_app/core/api/api_manager.dart';
 import 'package:street_bite_app/core/services/auth_service.dart';
+import 'package:street_bite_app/core/services/biometric_service.dart';
 import 'package:street_bite_app/core/services/firestore_service.dart';
 import 'package:street_bite_app/features/auth/data/repositories/auth_repo_impl.dart';
 import 'package:street_bite_app/features/auth/domain/repositories/auth_repo.dart';
@@ -43,6 +44,9 @@ void configureDependencies() {
   }
   if (!getIt.isRegistered<FirestoreService>()) {
     getIt.registerLazySingleton<FirestoreService>(() => FirestoreService.instance);
+  }
+  if (!getIt.isRegistered<BiometricService>()) {
+    getIt.registerLazySingleton<BiometricService>(() => BiometricService());
   }
 
   // Auth
