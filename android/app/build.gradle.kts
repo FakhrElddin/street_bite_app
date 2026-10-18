@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.example.street_bite_app"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 36 //flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     compileOptions {

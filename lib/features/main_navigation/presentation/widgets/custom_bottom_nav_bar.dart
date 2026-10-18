@@ -12,26 +12,26 @@ class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
   final void Function(int)? onTap;
 
-  final List<NavBarItemModel> items = const [
+  static const List<NavBarItemModel> items = [
     NavBarItemModel(
       icon: Icons.home_outlined,
       activeIcon: Icons.home,
-      label: 'Home',
+      tab: NavBarTab.home,
     ),
     NavBarItemModel(
-      icon: Icons.receipt_long_outlined,
-      activeIcon: Icons.receipt_long,
-      label: 'Orders',
+      icon: Icons.favorite_border,
+      activeIcon: Icons.favorite,
+      tab: NavBarTab.favorites,
     ),
     NavBarItemModel(
       icon: Icons.shopping_cart_outlined,
       activeIcon: Icons.shopping_cart,
-      label: 'Cart',
+      tab: NavBarTab.cart,
     ),
     NavBarItemModel(
       icon: Icons.person_outline,
       activeIcon: Icons.person,
-      label: 'Profile',
+      tab: NavBarTab.profile,
     ),
   ];
 
@@ -40,6 +40,7 @@ class CustomBottomNavBar extends StatelessWidget {
     return BottomNavigationBar(
       currentIndex: currentIndex,
       onTap: onTap,
+      type: BottomNavigationBarType.fixed,
       backgroundColor: Theme.of(context)
           .bottomNavigationBarTheme
           .backgroundColor,
@@ -49,7 +50,7 @@ class CustomBottomNavBar extends StatelessWidget {
         return BottomNavigationBarItem(
           icon: Icon(item.icon),
           activeIcon: Icon(item.activeIcon),
-          label: item.label,
+          label: item.getLabel(context),
         );
       }).toList(),
     );

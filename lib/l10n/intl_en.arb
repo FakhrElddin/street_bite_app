@@ -1,0 +1,139 @@
+{
+  "@@locale": "en",
+  "appName": "Street Bite",
+
+  "loginHeadline": "Food and groceries delivered to you",
+  "emailLabel": "Email",
+  "emailHint": "Enter Your Email",
+  "passwordLabel": "Password",
+  "passwordHint": "Enter Your Password",
+  "logIn": "Log In",
+  "dontHaveAccount": "Don't have account? ",
+  "signUpAction": "SIGN UP",
+
+  "registerHeadline": "Your favorite street bites and essentials",
+  "nameLabel": "Name",
+  "nameHint": "Enter Your Name",
+  "confirmPasswordLabel": "Confirm Password",
+  "confirmPasswordHint": "Confirm Your Password",
+  "signUp": "Sign Up",
+  "haveAccount": "have account? ",
+  "loginAction": "LOG IN",
+
+  "fieldRequired": "this field is required",
+  "enterValidEmail": "enter valid email",
+  "enterStrongPassword": "please enter strong password",
+  "enterSamePassword": "please enter same password",
+  "enterValidUsername": "please enter valid username",
+  "enterNumbersOnly": "enter numbers only",
+  "phoneNumberLengthError": "enter value must equal 11 digit",
+  "completeCode": "please complete code",
+
+  "navHome": "Home",
+  "navOrders": "Orders",
+  "navFavorites": "Favorites",
+  "navCart": "Cart",
+  "navProfile": "Profile",
+
+  "featuredMeals": "Featured Meals",
+  "hotOffers": "Hot Offers",
+  "hotPicks": "Hot Picks",
+  "liveMenu": "Live Menu",
+  "addToCart": "Add to Cart",
+  "hotPickBadge": "Hot Pick",
+  "meals": "Meals",
+  "priceInEgp": "{price} L.E",
+  "@priceInEgp": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "italy": "Italy",
+  "morningDelightsCafe": "Morning Delights Café",
+
+  "profileTitle": "Profile",
+  "darkMode": "Dark Mode",
+  "lightMode": "Light Mode",
+  "language": "Language",
+  "english": "English",
+  "arabic": "العربية",
+
+  "cartTitle": "Cart",
+  "ordersTitle": "Orders",
+  "favoritesTitle": "Favorites",
+
+  "dialogErrorTitle": "Error",
+  "dialogSuccessTitle": "Success",
+  "dialogOk": "OK",
+  "dialogCancel": "Cancel",
+
+  "errWeakPassword": "The password provided is too weak.",
+  "errEmailInUse": "An account already exists for that email.",
+  "errInvalidEmail": "The email address is not valid.",
+  "errUserNotFound": "No user found for that email address.",
+  "errWrongPassword": "Wrong password provided for that user.",
+  "errUserDisabled": "This user account has been disabled.",
+  "errTooManyRequests": "Too many attempts. Please try again later.",
+  "errNetworkRequestFailed": "Network error. Please check your internet connection.",
+  "errInvalidCredential": "Invalid email or password. Please check your credentials.",
+  "errUnexpectedAuth": "An unexpected authentication error occurred.",
+  "errPermissionDenied": "Permission denied. You do not have access to this data.",
+  "errFirestoreUnavailable": "Firestore service is currently unavailable. Check your internet.",
+  "errDatabaseGeneric": "A database error occurred. Please try again.",
+
+  "instructionsTitle": "Instructions",
+  "readMore": "Read more",
+  "readLess": "Read less",
+  "categoryLabel": "Category",
+  "originLabel": "Origin",
+  "itemAddedToCart": "Added to cart",
+  "addedToFavorites": "Added to favorites",
+  "removedFromFavorites": "Removed from favorites",
+
+  "emptyCartTitle": "Your cart is empty",
+  "emptyCartSubtitle": "Looks like you haven't added anything to your cart yet",
+  "emptyFavoritesTitle": "No favorites yet",
+  "emptyFavoritesSubtitle": "Save meals to your favorites to find them easily here",
+  "subtotal": "Subtotal",
+  "deliveryFee": "Delivery Fee",
+  "free": "Free",
+  "total": "Total",
+  "checkout": "Checkout",
+  "clearCart": "Clear Cart",
+  "cartCleared": "Cart cleared",
+  "loginRequiredFavorites": "Please log in to manage your favorites",
+  "cartItemCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@cartItemCount": {
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+
+  "selectPaymentMethod": "Select Payment Method",
+  "payWithCard": "Pay with Card",
+  "payWithCardSubtitle": "Credit or debit card",
+  "cashOnDelivery": "Cash on Delivery",
+  "cashOnDeliverySubtitle": "Pay with cash upon arrival",
+  "confirmOrder": "Confirm Order",
+  "orderPlacedSuccessfully": "Your order has been placed successfully!",
+  "loginRequiredToCheckout": "Please log in to place an order",
+  "ordersHistory": "Order History",
+  "noOrdersYet": "No orders placed yet",
+  "noFavoritesYet": "No favorites added yet",
+  "logOut": "Log Out",
+  "chooseImageSource": "Choose Image Source",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "uploadingPhoto": "Updating photo...",
+  "changePhoto": "Change Photo",
+  "guestUser": "Guest User",
+  "favorites": "Favorites",
+  "orders": "Orders",
+  "logOutConfirmMessage": "Are you sure you want to log out?"
+}
+
+

@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:street_bite_app/core/utils/app_assets.dart';
 import 'package:street_bite_app/features/auth/presentation/screens/login_screen.dart';
+import 'package:street_bite_app/features/main_navigation/presentation/screens/main_navigation_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -34,10 +37,15 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void _scheduleNavigation() {
-    Future.delayed(Duration(seconds: 2)).then((value) {
+    Future.delayed(const Duration(seconds: 2)).then((_) {
       if (!mounted) return;
+      final bool isLoggedIn =
+          Firebase.apps.isNotEmpty && FirebaseAuth.instance.currentUser != null;
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
+        MaterialPageRoute(
+          builder: (context) =>
+              isLoggedIn ? const MainNavigationScreen() : const LoginScreen(),
+        ),
       );
     });
   }

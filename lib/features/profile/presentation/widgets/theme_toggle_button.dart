@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:street_bite_app/core/utils/app_colors.dart';
 import 'package:street_bite_app/features/main_navigation/presentation/manager/cubit/theme_cubit.dart';
+import 'package:street_bite_app/generated/l10n.dart';
 
 class ThemeToggleButton extends StatelessWidget {
   const ThemeToggleButton({super.key});
@@ -14,8 +15,9 @@ class ThemeToggleButton extends StatelessWidget {
         final isDark = themeCubit.isDark;
 
         return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-          margin: const EdgeInsets.symmetric(horizontal: 32),
+          height: 64,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(horizontal: 24),
           decoration: BoxDecoration(
             color: isDark ? const Color(0xFF1E1E1E) : Colors.grey.shade100,
             borderRadius: BorderRadius.circular(16),
@@ -35,7 +37,9 @@ class ThemeToggleButton extends StatelessWidget {
                   ),
                   const SizedBox(width: 12),
                   Text(
-                    isDark ? 'Dark Mode' : 'Light Mode',
+                    isDark
+                        ? S.of(context).darkMode
+                        : S.of(context).lightMode,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -49,6 +53,7 @@ class ThemeToggleButton extends StatelessWidget {
               Switch.adaptive(
                 value: isDark,
                 activeTrackColor: AppColors.primaryColor,
+                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 onChanged: (_) {
                   themeCubit.changeTheme();
                 },

@@ -1,29 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:street_bite_app/core/utils/app_colors.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:street_bite_app/features/main_navigation/presentation/manager/cubit/theme_cubit.dart';
+import 'package:street_bite_app/features/vendor_map/presentation/screens/vendor_map_screen.dart';
+import 'package:street_bite_app/generated/l10n.dart';
 
 class HomeViewAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const new({super.key});
+  const HomeViewAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Row(
-        children: [
-          Icon(Icons.location_on_outlined, color: AppColors.primaryColor),
-          SizedBox(width: 8),
-          Text(
-            'Park Way 145',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primaryColor,
-            ),
-          ),
-        ],
+      centerTitle: true,
+      elevation: 0,
+      scrolledUnderElevation: 0,
+      backgroundColor: Colors.transparent,
+      title: Text(
+        S.of(context).appName,
+        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       ),
+      actions: [
+        IconButton(
+          tooltip: 'Nearby Vendors',
+          icon: const Icon(Icons.location_on_outlined),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const VendorMapScreen()),
+            );
+          },
+        ),
+        BlocBuilder<ThemeCubit, ThemeState>(
+          builder: (context, state) {
+            final themeCubit = ThemeCubit.get(context);
+            final isDark = themeCubit.isDark;
+            return IconButton(
+              tooltip: isDark
+                  ? S.of(context).lightMode
+                  : S.of(context).darkMode,
+              icon: Icon(
+                isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
+              ),
+              onPressed: () => themeCubit.changeTheme(),
+            );
+          },
+        ),
+      ],
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
